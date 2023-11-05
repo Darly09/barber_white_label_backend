@@ -22,8 +22,5 @@ If you made UI changes, what are the before an afters?
 screenshots unit test
 
 
-# 📊 Coverage (Opcional)
-screenshots coverage
-
 
 
