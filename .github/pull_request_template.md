@@ -1,7 +1,6 @@
 ### 🎯 Milestone 
 
-Que se quierer lograr con el PR. 
-En caso de que no se linkee, se agregue el lin clickup
+What do you want to achieve with the PR.
 
 ### 🛠 Changes
 
@@ -26,8 +25,5 @@ screenshots unit test
 # 📊 Coverage (Opcional)
 screenshots coverage
 
-
-# 🧹 Linter and Formatter
-screenshots linter and formattert
 
 
