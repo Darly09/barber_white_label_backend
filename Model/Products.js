@@ -7,9 +7,7 @@ class Product {
     price,
     description,
     quantity,
-    status,
-    img,
-    admin_id
+    status
   ) {
     this.reference = reference;
     this.name = name;
@@ -19,7 +17,7 @@ class Product {
     this.description = description;
     this.quantity = quantity;
     this.status = status;
-    this.img = img;
-    this.admin_id = admin_id;
   }
 }
+
+module.exports = { Product };
