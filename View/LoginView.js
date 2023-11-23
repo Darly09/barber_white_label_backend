@@ -1,6 +1,6 @@
 const express = require("express");
-const { login } = require("../Controller/LoginController.js");
-const { Login } = require("../Model/Login.js");
+const { login } = require("../controller/LoginController.js");
+const { Login } = require("../model/Login.js");
 const LoginRoutes = express.Router();
 
 LoginRoutes.post("/login", async (req, res) => {

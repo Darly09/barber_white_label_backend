@@ -28,7 +28,7 @@ class Login {
     if (!isValid) {
       throw Error("Contraseña invalida");
     }
-  }
+  } 
 }
 
 module.exports = { Login };
