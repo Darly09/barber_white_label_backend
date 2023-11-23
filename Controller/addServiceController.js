@@ -18,22 +18,3 @@ function addService(newServiceData) {
 }
 
 module.exports = { addService };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
