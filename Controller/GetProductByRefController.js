@@ -1,4 +1,4 @@
-const { selectProduct } = require("../Data/ProductsData.js");
+const { selectProduct } = require("../data/ProductsData.js");
 
 async function getProductByRef(id) {
   if (id == undefined || id == "" || id == null) {

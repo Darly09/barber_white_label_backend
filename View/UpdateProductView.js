@@ -1,5 +1,5 @@
 const express = require("express");
-const { updateProduct } = require("../Controller/UpdateProductController.js");
+const { updateProduct } = require("../controller/UpdateProductController.js");
 const ProductUpdateRoutes = express.Router();
 
 ProductUpdateRoutes.put("/updateProduct/:reference", async (req, res) => {

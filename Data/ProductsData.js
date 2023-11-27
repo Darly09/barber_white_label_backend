@@ -1,4 +1,4 @@
-const { Product } = require("../Model/Products.js");
+const { Product } = require("../model/Products.js");
 
 async function selectProduct() {
   const productsMock = [

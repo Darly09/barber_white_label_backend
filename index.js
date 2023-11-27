@@ -1,10 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
-const { LoginRoutes } = require("./View/LoginView.js");
-const { ProductsRoutes } = require("./View/ProductView.js");
-const { ProductsByRefRoutes } = require("./View/ProductByRefView.js");
-const { ProductUpdateRoutes } = require("./View/UpdateProductView.js");
+const { LoginRoutes } = require("./view/LoginView.js");
+const { ProductsRoutes } = require("./view/ProductView.js");
+const { ProductsByRefRoutes } = require("./view/ProductByRefView.js");
+const { ProductUpdateRoutes } = require("./view/UpdateProductView.js");
 const { ServiRoutes } = require("./view/ServiView.js");
 
 const PORT = 3000;
