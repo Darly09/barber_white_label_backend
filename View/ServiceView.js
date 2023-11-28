@@ -70,10 +70,4 @@ ServiceRoutes.post('/services', async (req, res) => {
   }
 });
 
-
 module.exports = { ServiceRoutes};
-
-
-
-
-
