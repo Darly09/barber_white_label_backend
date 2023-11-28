@@ -1,7 +1,7 @@
 const express = require("express");
 const {
   getProductByRef,
-} = require("../Controller/GetProductByRefController.js");
+} = require("../controller/GetProductByRefController.js");
 const ProductsByRefRoutes = express.Router();
 
 ProductsByRefRoutes.get("/product/:id", async (req, res) => {

@@ -1,5 +1,5 @@
 const express = require("express");
-const { getProduct } = require("../Controller/GetProductsController.js");
+const { getProduct } = require("../controller/GetProductsController.js");
 const ProductsRoutes = express.Router();
 
 ProductsRoutes.get("/products", async (req, res) => {
@@ -12,8 +12,7 @@ ProductsRoutes.get("/products", async (req, res) => {
       data: products,
     });
   } catch (error) {
-    statusCode = 404,
-    res.status(statusCode);
+    (statusCode = 404), res.status(statusCode);
     res.send({
       code: statusCode,
       message: error,
