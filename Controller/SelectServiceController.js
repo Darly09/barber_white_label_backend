@@ -1,4 +1,3 @@
-// endpoint para consumir un servicio
 const { selectServices } = require("../data/ServicesData.js");
 
 async function getServices() {
