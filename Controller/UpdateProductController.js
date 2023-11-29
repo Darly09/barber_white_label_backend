@@ -1,20 +1,13 @@
-import { selectProduct } from "../data/ProductsData.js";
+import { putProduct } from "../data/UpdateProductData.js";
 
 export async function updateProduct(product, reference) {
-  const products = await selectProduct();
-  const productIndex = products.findIndex(
-    (product) => product.reference == reference
-  );
-
+  const productUpdated = await putProduct(reference, product);
   if (
-    productIndex === -1 ||
-    productIndex === null ||
-    productIndex === undefined
+    productUpdated === -1 ||
+    productUpdated === null ||
+    productUpdated === undefined
   ) {
     throw Error("Producto no encontrado.");
   }
-
-  products[productIndex] = product;
-
-  return products[productIndex];
+  return productUpdated;
 }
