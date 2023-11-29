@@ -6,6 +6,7 @@ const { ProductsRoutes } = require("./view/ProductView.js");
 const { ProductsByRefRoutes } = require("./view/ProductByRefView.js");
 const { ProductUpdateRoutes } = require("./view/UpdateProductView.js");
 const { ServiceUpdateRoutes } = require("./view/UpdateServiceView.js");
+const { AddProductRoutes } = require("./view/AddProductView.js");
 
 const PORT = 3000;
 const app = express();
@@ -20,7 +21,8 @@ app.use(
   ServiceRoutes,
   ProductsByRefRoutes,
   ProductUpdateRoutes,
-  ServiceUpdateRoutes
+  ServiceUpdateRoutes,
+  AddProductRoutes
 );
 
 app.listen(PORT);
