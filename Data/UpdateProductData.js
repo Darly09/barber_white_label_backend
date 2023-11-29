@@ -15,13 +15,11 @@ export async function putProduct(reference, product) {
     })
     .eq("reference", reference)
     .select();
-  console.log(data);
-  console.log(error);
 
   if (data.length !== 0 && error === null) {
     return data;
   }
   if (error === null)
-    throw Error("No se encuentra un producto con este id: " + reference);
+    throw Error("No se encuentra un producto con esta referencia: " + reference);
   throw Error(error.message);
 }
