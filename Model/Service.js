@@ -1,5 +1,5 @@
-class Service{
-  constructor(id, name, category, price, description, img, admin_id){
+export class Service {
+  constructor(id, name, category, price, description, img, admin_id) {
     this.id = id;
     this.name = name;
     this.category = category;
@@ -8,7 +8,4 @@ class Service{
     this.img = img;
     this.admin_id = admin_id;
   }
-  
 }
-
-module.exports =  {Service}

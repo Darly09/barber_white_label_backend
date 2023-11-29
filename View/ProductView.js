@@ -1,6 +1,6 @@
-const express = require("express");
-const { getProduct } = require("../controller/GetProductsController.js");
-const ProductsRoutes = express.Router();
+import express from "express";
+import { getProduct } from "../controller/GetProductsController.js";
+export const ProductsRoutes = express.Router();
 
 ProductsRoutes.get("/products", async (req, res) => {
   let statusCode = 200;
@@ -19,5 +19,3 @@ ProductsRoutes.get("/products", async (req, res) => {
     });
   }
 });
-
-module.exports = { ProductsRoutes };

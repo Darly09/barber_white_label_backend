@@ -1,11 +1,5 @@
-async function login(login) {
-  const emailMock = "backend@gmail.com";
-  const passwordMock = "123LaNea4**";
+import { signInWithEmail } from "../data/LoginData.js";
 
-  const isCorrectEmail = emailMock === login.email;
-  const isCorrectPassword = passwordMock === login.password;
-
-  return isCorrectEmail && isCorrectPassword;
+export async function login(login) {
+  return signInWithEmail(login.email, login.password);
 }
-
-module.exports = { login };

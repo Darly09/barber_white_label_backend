@@ -1,6 +1,6 @@
-const { selectProduct } = require("../data/ProductsData.js");
+import { selectProduct } from "../data/ProductsData.js";
 
-async function getProductByRef(id) {
+export async function getProductByRef(id) {
   if (id == undefined || id == "" || id == null) {
     throw Error("Id invalido.");
   }
@@ -12,5 +12,3 @@ async function getProductByRef(id) {
   }
   return product;
 }
-
-module.exports = { getProductByRef };

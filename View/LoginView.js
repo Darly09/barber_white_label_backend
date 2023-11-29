@@ -1,7 +1,7 @@
-const express = require("express");
-const { login } = require("../controller/LoginController.js");
-const { Login } = require("../model/Login.js");
-const LoginRoutes = express.Router();
+import express from "express";
+import { login } from "../controller/LoginController.js";
+import { Login } from "../model/Login.js";
+export const LoginRoutes = express.Router();
 
 LoginRoutes.post("/login", async (req, res) => {
   try {
@@ -17,5 +17,3 @@ LoginRoutes.post("/login", async (req, res) => {
     });
   }
 });
-
-module.exports = { LoginRoutes };

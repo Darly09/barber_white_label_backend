@@ -1,12 +1,12 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const { LoginRoutes } = require("./view/LoginView.js");
-const { ServiceRoutes } = require("./view/ServiceView.js");
-const { ProductsRoutes } = require("./view/ProductView.js");
-const { ProductsByRefRoutes } = require("./view/ProductByRefView.js");
-const { ProductUpdateRoutes } = require("./view/UpdateProductView.js");
-const { ServiceUpdateRoutes } = require("./view/UpdateServiceView.js");
-const { AddProductRoutes } = require("./view/AddProductView.js");
+import express from "express";
+import bodyParser from "body-parser";
+import { LoginRoutes } from "./view/LoginView.js";
+import { ServiceRoutes } from "./view/ServiceView.js";
+import { ProductsRoutes } from "./view/ProductView.js";
+import { ProductsByRefRoutes } from "./view/ProductByRefView.js";
+import { ProductUpdateRoutes } from "./view/UpdateProductView.js";
+import { ServiceUpdateRoutes } from "./view/UpdateServiceView.js";
+import { AddProductRoutes } from "./view/AddProductView.js";
 
 const PORT = 3000;
 const app = express();

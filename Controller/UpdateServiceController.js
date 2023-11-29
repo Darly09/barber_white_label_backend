@@ -1,6 +1,6 @@
-const { selectServices } = require("../data/ServicesData.js");
+import { selectServices } from "../data/ServicesData.js";
 
-async function updateService(service, id) {
+export async function updateService(service, id) {
   const services = await selectServices();
   const serviceIndex = services.findIndex((service) => service.id == id);
 
@@ -16,5 +16,3 @@ async function updateService(service, id) {
 
   return services[serviceIndex];
 }
-
-module.exports = { updateService };

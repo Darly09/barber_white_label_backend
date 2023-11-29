@@ -1,4 +1,4 @@
-class Login {
+export class Login {
   email;
   password;
   constructor(email, password) {
@@ -28,7 +28,5 @@ class Login {
     if (!isValid) {
       throw Error("Contraseña invalida");
     }
-  } 
+  }
 }
-
-module.exports = { Login };

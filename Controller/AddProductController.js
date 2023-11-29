@@ -1,6 +1,6 @@
-const { selectProduct } = require("../data/ProductsData");
+import { selectProduct } from "../data/ProductsData.js";
 
-function addProduct(newProductData) {
+export function addProduct(newProductData) {
   if (
     !newProductData.name ||
     !newProductData.brand ||
@@ -24,5 +24,3 @@ function addProduct(newProductData) {
 
   return newProduct;
 }
-
-module.exports = { addProduct };

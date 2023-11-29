@@ -1,9 +1,7 @@
-const { selectProduct } = require("../data/ProductsData.js");
+import { selectProduct } from "../data/ProductsData.js";
 
-async function getProduct() {
+export async function getProduct() {
   const products = await selectProduct();
 
   return products;
 }
-
-module.exports = { getProduct };
