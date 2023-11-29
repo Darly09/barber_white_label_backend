@@ -1,48 +1,10 @@
-import { Service } from "../model/Service.js";
+import { supabase } from "./ClientAuthData.js";
 
 export async function selectServices() {
-  const servicesMock = [
-    new Service(
-      1,
-      "Corte",
-      1,
-      20,
-      "Servicio de corte de pelo",
-      "url_de_la_imagen",
-      1
-    ),
+  const {data, error} = await supabase.from("service").select();
 
-    new Service(
-      2,
-      "Barba",
-      2,
-      15.0,
-      "Servicio de arreglo de barba",
-      "url_de_la_imagen",
-      1
-    ),
-  ];
-
-  return servicesMock;
+  if (error == null ){
+    return data;
+  }
+  throw Error(error.message);
 }
-
-export const servicesMock = [
-  new Service(
-    1,
-    "Corte",
-    1,
-    20,
-    "Servicio de corte de pelo",
-    "url_de_la_imagen",
-    1
-  ),
-  new Service(
-    2,
-    "Barba",
-    2,
-    15.0,
-    "Servicio de arreglo de barba",
-    "url_de_la_imagen",
-    1
-  ),
-];
