@@ -1,7 +1,10 @@
 import { supabase } from "./ClientAuthData.js";
 
 export async function selectProduct() {
-  const result = await supabase.from("product").select();
+  const { data, error } = await supabase.from("product").select();
 
-  return result;
+  if (error === null) {
+    return data;
+  }
+  throw Error(error.message);
 }
