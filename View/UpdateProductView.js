@@ -2,7 +2,7 @@ import express from "express";
 import { updateProduct } from "../controller/UpdateProductController.js";
 export const ProductUpdateRoutes = express.Router();
 
-ProductUpdateRoutes.put("/updateProduct/:reference", async (req, res) => {
+ProductUpdateRoutes.patch("/updateProduct/:reference", async (req, res) => {
   let statusCode = 200;
   try {
     const reference = req.params.reference;
