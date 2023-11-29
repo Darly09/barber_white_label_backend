@@ -1,26 +1,15 @@
-import { selectProduct } from "../data/ProductsData.js";
+import { supabase } from "../data/ClientAuthData.js";
 
-export function addProduct(newProductData) {
-  if (
-    !newProductData.name ||
-    !newProductData.brand ||
-    !newProductData.category ||
-    !newProduct.price ||
-    !newProduct.description ||
-    !newProductData.quantity ||
-    !newProductData.status
-  ) {
-    throw Error("Todos los campos son obligatorios");
+export async function addProduct(product) {
+  const { data, error } = await supabase
+    .from("product")
+    .insert([product])
+    .select();
+  console.log(error);
+
+  if (data !== null && error === null) {
+    return data;
   }
-
-  const products = selectProduct();
-
-  const newProduct = {
-    reference: products.length + 1,
-    ...newProductData,
-  };
-
-  products.push(newProduct);
-
-  return newProduct;
+  if (error === null) throw Error("No se pudo crear el producto");
+  throw Error(error.message);
 }

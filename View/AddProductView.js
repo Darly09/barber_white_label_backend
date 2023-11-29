@@ -5,8 +5,8 @@ export const AddProductRoutes = express.Router();
 AddProductRoutes.post("/addProduct", async (req, res) => {
   let statusCode = 200;
   try {
-    const newProductData = req.body;
-    const newProduct = addProduct(newProductData);
+    const product = req.body;
+    const newProduct = addProduct(product);
     res.status(statusCode);
     res.send({
       code: statusCode,
