@@ -5,8 +5,7 @@ export async function signInWithEmail(email, password) {
     email: email,
     password: password,
   });
-  console.log(data);
-  console.log(error);
+
   if (error === null) {
     return data;
   }
