@@ -1,6 +1,6 @@
-const { selectProduct } = require("../data/ProductsData.js");
+import { selectProduct } from "../data/ProductsData.js";
 
-async function updateProduct(product, reference) {
+export async function updateProduct(product, reference) {
   const products = await selectProduct();
   const productIndex = products.findIndex(
     (product) => product.reference == reference
@@ -18,5 +18,3 @@ async function updateProduct(product, reference) {
 
   return products[productIndex];
 }
-
-module.exports = { updateProduct };

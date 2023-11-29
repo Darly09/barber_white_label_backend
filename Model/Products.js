@@ -1,4 +1,4 @@
-class Product {
+export class Product {
   constructor(
     reference,
     name,
@@ -19,5 +19,3 @@ class Product {
     this.status = status;
   }
 }
-
-module.exports = { Product };

@@ -1,34 +1,33 @@
-const express = require('express');
-const { addService } = require('../controller/addServiceController.js');
-const { getServices, getServiceById} = require("../controller/SelectServiceController.js");
-const ServiceRoutes = express.Router();
+import express from "express";
+import { addService } from "../controller/addServiceController.js";
+import {
+  getServices,
+  getServiceById,
+} from "../controller/SelectServiceController.js";
+export const ServiceRoutes = express.Router();
 
-
-ServiceRoutes.get('/services', async (req, res) => {
+ServiceRoutes.get("/services", async (req, res) => {
   let statusCode = 200;
-  try{
+  try {
     const selectServices = parseInt(req.params.id);
-    const  services = await getServices(selectServices);
+    const services = await getServices(selectServices);
     res.status(statusCode);
     res.send({
       code: statusCode,
       message: "sucess",
-      data: services, 
+      data: services,
     });
-  }
-  catch  (error){
+  } catch (error) {
     statusCode = 404;
     res.status(statusCode);
     res.send({
-      code : statusCode,
+      code: statusCode,
       message: error.message,
     });
   }
-
 });
 
-
-ServiceRoutes.get('/services/:id', async (req, res) => {
+ServiceRoutes.get("/services/:id", async (req, res) => {
   let statusCode = 200;
   try {
     const serviceId = parseInt(req.params.id);
@@ -39,21 +38,21 @@ ServiceRoutes.get('/services/:id', async (req, res) => {
       message: "sucess",
       data: service,
     });
-  } catch (error){
+  } catch (error) {
     statusCode = 404;
     res.status(statusCode);
     res.send({
-      code : statusCode,
+      code: statusCode,
       message: error.message,
     });
   }
 });
 
-ServiceRoutes.post('/services', async (req, res) => {
+ServiceRoutes.post("/services", async (req, res) => {
   let statusCode = 200;
   try {
     const newServiceData = req.body;
-    const newService = addService( newServiceData );
+    const newService = addService(newServiceData);
     res.status(statusCode);
     res.send({
       code: statusCode,
@@ -64,10 +63,8 @@ ServiceRoutes.post('/services', async (req, res) => {
     statusCode = 404;
     res.status(statusCode);
     res.send({
-      code : statusCode,
+      code: statusCode,
       message: error.message,
     });
   }
 });
-
-module.exports = { ServiceRoutes};

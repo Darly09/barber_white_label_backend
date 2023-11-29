@@ -1,8 +1,6 @@
-const { servicesMock } = require("../data/ServicesData.js");
+import { servicesMock } from "../data/ServicesData.js";
 
-
-function addService(newServiceData) {
-  
+export function addService(newServiceData) {
   if (!newServiceData.name || !newServiceData.price) {
     throw new Error("Nombre y precio son campos obligatorios");
   }
@@ -16,5 +14,3 @@ function addService(newServiceData) {
 
   return newService;
 }
-
-module.exports = { addService };

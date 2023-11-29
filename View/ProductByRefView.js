@@ -1,8 +1,6 @@
-const express = require("express");
-const {
-  getProductByRef,
-} = require("../controller/GetProductByRefController.js");
-const ProductsByRefRoutes = express.Router();
+import express from "express";
+import { getProductByRef } from "../controller/GetProductByRefController.js";
+export const ProductsByRefRoutes = express.Router();
 
 ProductsByRefRoutes.get("/product/:id", async (req, res) => {
   let statusCode = 200;
@@ -24,5 +22,3 @@ ProductsByRefRoutes.get("/product/:id", async (req, res) => {
     });
   }
 });
-
-module.exports = { ProductsByRefRoutes };

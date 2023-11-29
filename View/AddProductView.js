@@ -1,6 +1,6 @@
-const express = require("express");
-const { addProduct } = require("../controller/AddProductController");
-const AddProductRoutes = express.Router();
+import express from "express";
+import { addProduct } from "../controller/AddProductController.js";
+export const AddProductRoutes = express.Router();
 
 AddProductRoutes.post("/addProduct", async (req, res) => {
   let statusCode = 200;
@@ -22,5 +22,3 @@ AddProductRoutes.post("/addProduct", async (req, res) => {
     });
   }
 });
-
-module.exports = { AddProductRoutes };

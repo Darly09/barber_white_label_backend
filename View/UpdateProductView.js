@@ -1,6 +1,6 @@
-const express = require("express");
-const { updateProduct } = require("../controller/UpdateProductController.js");
-const ProductUpdateRoutes = express.Router();
+import express from "express";
+import { updateProduct } from "../controller/UpdateProductController.js";
+export const ProductUpdateRoutes = express.Router();
 
 ProductUpdateRoutes.put("/updateProduct/:reference", async (req, res) => {
   let statusCode = 200;
@@ -23,5 +23,3 @@ ProductUpdateRoutes.put("/updateProduct/:reference", async (req, res) => {
     });
   }
 });
-
-module.exports = { ProductUpdateRoutes };

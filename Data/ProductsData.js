@@ -1,6 +1,6 @@
-const { Product } = require("../model/Products.js");
+import { Product } from "../model/Products.js";
 
-async function selectProduct() {
+export async function selectProduct() {
   const productsMock = [
     new Product(
       1,
@@ -38,5 +38,3 @@ async function selectProduct() {
 
   return productsMock;
 }
-
-module.exports = { selectProduct };
