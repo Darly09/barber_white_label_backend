@@ -1,16 +1,16 @@
-import { servicesMock } from "../data/ServicesData.js";
+import { selectServices } from "../data/ServicesData.js";
 
-export function addService(newServiceData) {
+export async function addService(newServiceData) {
   if (!newServiceData.name || !newServiceData.price) {
     throw new Error("Nombre y precio son campos obligatorios");
   }
 
   const newService = {
-    id: servicesMock.length + 1,
+    id: selectServices.length + 1,
     ...newServiceData,
   };
 
-  servicesMock.push(newService);
+  selectServices.push(newService);
 
   return newService;
 }
