@@ -3,16 +3,7 @@ import { supabase } from "./ClientAuthData.js";
 export async function putProduct(reference, product) {
   const { data, error } = await supabase
     .from("product")
-    .update({
-      name: product.name,
-      brand: product.brand,
-      category: product.category,
-      price: product.price,
-      description: product.description,
-      quantity: product.quantity,
-      status: product.status,
-      img: product.img,
-    })
+    .update(product)
     .eq("reference", reference)
     .select();
 
@@ -20,6 +11,8 @@ export async function putProduct(reference, product) {
     return data;
   }
   if (error === null)
-    throw Error("No se encuentra un producto con esta referencia: " + reference);
+    throw Error(
+      "No se encuentra un producto con esta referencia: " + reference
+    );
   throw Error(error.message);
 }

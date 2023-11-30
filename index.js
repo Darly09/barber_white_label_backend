@@ -7,6 +7,7 @@ import { ProductsByRefRoutes } from "./view/ProductByRefView.js";
 import { ProductUpdateRoutes } from "./view/UpdateProductView.js";
 import { ServiceUpdateRoutes } from "./view/UpdateServiceView.js";
 import { AddProductRoutes } from "./view/AddProductView.js";
+import { ProductDeleteRoutes } from "./view/DeleteProductView.js";
 import cors from "cors";
 
 const PORT = 3000;
@@ -27,7 +28,8 @@ app.use(
   ProductsByRefRoutes,
   ProductUpdateRoutes,
   ServiceUpdateRoutes,
-  AddProductRoutes
+  AddProductRoutes,
+  ProductDeleteRoutes
 );
 
 app.listen(PORT);
