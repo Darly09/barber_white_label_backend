@@ -1,8 +1,9 @@
 import express from "express";
 import { deleteService } from "../controller/serviceController.js";
-export const ServicesRoutes = express.Router();
 
-ServicesRoutes.delete("/services/:reference", async (req, res) => {
+export const DeleteServicesRoutes = express.Router();
+
+DeleteServiceRoutes.delete("/services/:reference", async (req, res) => {
   let statusCode = 200;
   const reference = req.params.reference;
   try {
