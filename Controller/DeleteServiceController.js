@@ -1,6 +1,6 @@
 import { supabase } from "../data/ClientAuthData.js";
 
-export async function DeleteService(reference) {
+export async function deleteService(reference) {
   const { data, error } = await supabase
     .from("service")
     .delete()

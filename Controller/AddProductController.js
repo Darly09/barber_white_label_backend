@@ -5,7 +5,6 @@ export async function addProduct(product) {
     .from("product")
     .insert([product])
     .select();
-  console.log(error);
 
   if (data !== null && error === null) {
     return data;

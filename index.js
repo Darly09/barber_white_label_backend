@@ -8,12 +8,18 @@ import { ProductUpdateRoutes } from "./view/UpdateProductView.js";
 import { ServiceUpdateRoutes } from "./view/UpdateServiceView.js";
 import { AddProductRoutes } from "./view/AddProductView.js";
 const { DeleteService } = require("./controller/serviceController.js");
+import { ProductDeleteRoutes } from "./view/DeleteProductView.js";
+import cors from "cors";
 
 const PORT = 3000;
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors({
+    origin: '*',
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+}));
 
 app.use(
   "/api",
@@ -23,8 +29,7 @@ app.use(
   ProductsByRefRoutes,
   ProductUpdateRoutes,
   ServiceUpdateRoutes,
-  AddProductRoutes,
-  DeleteService,
+  AddProductRoutes
 );
 
 app.listen(PORT);
