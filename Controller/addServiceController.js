@@ -1,16 +1,16 @@
-import { selectServices } from "../data/ServicesData.js";
+import { supabase } from "../data/ClientAuthData.js";
 
-export async function addService(newServiceData) {
-  if (!newServiceData.name || !newServiceData.price) {
-    throw new Error("Nombre y precio son campos obligatorios");
-  }
+export async function addService(service) {
+  const { data, error } = await supabase
+  .from("service")
+  .insert([service])
+  .select();
+console.log(error);
 
-  const newService = {
-    id: selectServices.length + 1,
-    ...newServiceData,
-  };
-
-  selectServices.push(newService);
-
-  return newService;
+if (data !== null && error === null) {
+  return data;
 }
+if (error === null) throw Error("No se pudo crear el producto");
+throw Error(error.message);
+}
+
