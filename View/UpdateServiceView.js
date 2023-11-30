@@ -2,7 +2,7 @@ import express from "express";
 import { updateService } from "../controller/UpdateServiceController.js";
 export const ServiceUpdateRoutes = express.Router();
 
-ServiceUpdateRoutes.put("/updateService/:id", async (req, res) => {
+ServiceUpdateRoutes.patch("/updateService/:id", async (req, res) => {
   let statusCode = 200;
   try {
     const id = req.params.id;
