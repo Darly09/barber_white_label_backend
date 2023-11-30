@@ -7,6 +7,7 @@ import { ProductsByRefRoutes } from "./view/ProductByRefView.js";
 import { ProductUpdateRoutes } from "./view/UpdateProductView.js";
 import { ServiceUpdateRoutes } from "./view/UpdateServiceView.js";
 import { AddProductRoutes } from "./view/AddProductView.js";
+const { DeleteService } = require("./controller/serviceController.js");
 
 const PORT = 3000;
 const app = express();
@@ -22,7 +23,8 @@ app.use(
   ProductsByRefRoutes,
   ProductUpdateRoutes,
   ServiceUpdateRoutes,
-  AddProductRoutes
+  AddProductRoutes,
+  DeleteService,
 );
 
 app.listen(PORT);
